@@ -6,9 +6,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glassesusa/dsm@latest/dist/styles.min.css">
+    <!-- Scripts - Required if you are using any form elements/buttons-->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="dsm-card">
+        <div class="top-section">
+            <div class="name">Theo</div>
+            <div class="date">August 7, 21</div>
+        </div>
+        <div class="stars">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.97751 3.77132L12 4.58348L9.20006 7.72683L9.70818 12L6.00001 10.1712L2.29135 12L2.79994 7.72683L0 4.58348L4.02202 3.77132L6.00001 0L7.97751 3.77132Z"
+                    fill="#EAB02F" />
+            </svg>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.97751 3.77132L12 4.58348L9.20006 7.72683L9.70818 12L6.00001 10.1712L2.29135 12L2.79994 7.72683L0 4.58348L4.02202 3.77132L6.00001 0L7.97751 3.77132Z"
+                    fill="#EAB02F" />
+            </svg>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.97751 3.77132L12 4.58348L9.20006 7.72683L9.70818 12L6.00001 10.1712L2.29135 12L2.79994 7.72683L0 4.58348L4.02202 3.77132L6.00001 0L7.97751 3.77132Z"
+                    fill="#EAB02F" />
+            </svg>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.97751 3.77132L12 4.58348L9.20006 7.72683L9.70818 12L6.00001 10.1712L2.29135 12L2.79994 7.72683L0 4.58348L4.02202 3.77132L6.00001 0L7.97751 3.77132Z"
+                    fill="#EAB02F" />
+            </svg>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M7.97751 3.77132L12 4.58348L9.20006 7.72683L9.70818 12L6.00001 10.1712L2.29135 12L2.79994 7.72683L0 4.58348L4.02202 3.77132L6.00001 0L7.97751 3.77132Z"
+                    fill="#EAB02F" />
+            </svg>
+
+        </div>
+        <div class="title">
+            It was extermly easy
+        </div>
+        <div class="summary">
+            They are so nice I followed the prescription the doctor gave me and they came out to be perfect I love them
+            so much I was nervous how they would look Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque,
+            ipsam eius. Praesentium qui, quas deserunt deleniti possimus omnis architecto harum.
+        </div>
+    </div>
+    <script>
+        let cards = document.querySelectorAll('.dsm-card')
+
+        cards.forEach(card => {
+            const summary = card.querySelector('.summary')
+            if (!summary) return
+            const textLength = summary.innerText.length;
+
+            if (textLength > 150) {
+                let full = document.createElement('div')
+                full.className = 'full'
+                full.innerHTML = summary.innerText
+                summary.innerHTML = summary.innerText.split('').slice(0, 150).join('').trim() +
+                    `... <span class="readMore">Read More</span>`
+                summary.appendChild(full)
+            }
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@glassesusa/dsm@latest/dist/dsm-effects.min.js"> </script>
 
 </body>
 
