@@ -60,7 +60,7 @@
             </div>
             <div class="slide dsm-card">
                 <div class="top-section">
-                    <div class="name">Theo</div>
+                    <div class="name">Test</div>
                     <div class="date">August 7, 21</div>
                 </div>
                 <div class="stars">
@@ -141,9 +141,6 @@
                 <div class="summary">
                     They are so nice I followed the prescription the doctor gave me and they came out to be perfect
                     I love them
-                    so much I was nervous how they would look Lorem ipsum, dolor sit amet consectetur adipisicing
-                    elit. Cumque,
-                    ipsam eius. Praesentium qui, quas deserunt deleniti possimus omnis architecto harum.
                 </div>
             </div>
             <div class="slide dsm-card">
@@ -192,6 +189,30 @@
             </div>
         </div>
     </div>
+    <div class="sidebar">
+        <div class="overlay" onclick="closeSidebar()"></div>
+        <div class="dsm-card">
+            <div class="top-section">
+                <div class="name"></div>
+                <div class="stars">
+                </div>
+                <div class="closeButton" onclick="closeSidebar()">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.8718 1L1 11" stroke="#3A4850" stroke-width="1.5" stroke-linecap="round" />
+                        <path d="M1.1282 1L11 11" stroke="#3A4850" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </div>
+            </div>
+            <div class="content">
+                <!-- <div class="title">
+                </div> -->
+                <div class="summary">
+
+                </div>
+                <div class="date"></div>
+            </div>
+        </div>
+    </div>
 
     <script>
         let cards = document.querySelectorAll('.dsm-card')
@@ -206,10 +227,37 @@
                 full.className = 'full'
                 full.innerHTML = summary.innerText
                 summary.innerHTML = summary.innerText.split('').slice(0, 150).join('').trim() +
-                    `... <span class="readMore">Read More</span>`
+                    `... <span class="readMore" onclick="openSidebar(this)">Read More</span>`
                 summary.appendChild(full)
             }
         })
+
+        function openSidebar(el) {
+            const fullMessage = el.closest('.dsm-card')
+            const sidebar = document.querySelector('.sidebar');
+            if (!fullMessage) return
+            document.querySelector('.sidebar').style.display = "block"
+            setTimeout(() => {
+                document.querySelector('.sidebar').classList.add('active')
+            }, 100);
+            sidebar.querySelector('.name').innerHTML = fullMessage.querySelector('.name').innerHTML
+            sidebar.querySelector('.stars').innerHTML = fullMessage.querySelector('.stars').innerHTML
+            sidebar.querySelector('.summary').innerHTML = fullMessage.querySelector('.full').innerHTML
+            sidebar.querySelector('.date').innerHTML = fullMessage.querySelector('.date').innerHTML
+        }
+
+        function closeSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+
+            document.querySelector('.sidebar').classList.remove('active')
+            setTimeout(() => {
+                sidebar.querySelector('.name').innerHTML = ''
+                sidebar.querySelector('.stars').innerHTML = ''
+                sidebar.querySelector('.summary').innerHTML = ''
+                sidebar.querySelector('.date').innerHTML = ''
+                document.querySelector('.sidebar').style.display = "none"
+            }, 400);
+        }
 
         let i = setInterval(() => {
             if (typeof initiateSwiper != "undefined") {
@@ -218,7 +266,7 @@
                     gap: 10,
                     padding: 20,
                     slidesPerView: 2,
-                    mobileStyle: 'pagination',
+                    mobileStyle: 'doubles',
                     loop: false,
                     withScrollIndicator: false,
                     withDots: false,

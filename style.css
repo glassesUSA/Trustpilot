@@ -82,3 +82,81 @@
 .dsm-card .summary .readMore {
   color: #2196F3;
 }
+
+.sidebar {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  display: none;
+  top: 0;
+  height: 100%;
+}
+
+.sidebar .overlay {
+  width: 100%;
+  background: rgba(15, 15, 15, 0.7);
+  height: 100%;
+  position: absolute;
+  z-index: 90;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  top: 0;
+}
+
+.sidebar.active {
+  display: block;
+}
+
+.sidebar.active .overlay {
+  opacity: 1;
+}
+
+.sidebar.active .dsm-card {
+  bottom: 0;
+}
+
+.sidebar .dsm-card {
+  width: 100%;
+  position: absolute;
+  bottom: -100%;
+  z-index: 91;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  height: auto;
+  padding: 0;
+  left: 0;
+}
+
+.sidebar .dsm-card .closeButton {
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.sidebar .dsm-card .top-section {
+  padding: 17px 20px;
+  margin-bottom: 0;
+  position: relative;
+  display: block;
+  text-align-last: left;
+  border-bottom: 1px solid #DBE1E5;
+}
+
+.sidebar .dsm-card .top-section .stars {
+  margin-top: 8px;
+}
+
+.sidebar .dsm-card .content {
+  padding: 24px 28px;
+}
+
+.sidebar .dsm-card .content .summary {
+  display: block;
+}
+
+.sidebar .dsm-card .content .date {
+  margin-top: 12px;
+}
