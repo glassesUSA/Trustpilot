@@ -151,6 +151,12 @@
 
 .sidebar .dsm-card .content {
   padding: 24px 28px;
+  max-height: 200px;
+  overflow: auto;
+}
+
+.sidebar .dsm-card .content .title {
+  margin-top: 0;
 }
 
 .sidebar .dsm-card .content .summary {

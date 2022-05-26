@@ -92,14 +92,33 @@
 
                 </div>
                 <div class="title">
-                    It was extermly easy
+                    Some other title
                 </div>
                 <div class="summary">
-                    They are so nice I followed the prescription the doctor gave me and they came out to be perfect
-                    I love them
-                    so much I was nervous how they would look Lorem ipsum, dolor sit amet consectetur adipisicing
-                    elit. Cumque,
-                    ipsam eius. Praesentium qui, quas deserunt deleniti possimus omnis architecto harum.
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, ullam modi quis quia
+                    voluptate atque, facere similique repellat vitae odio laboriosam mollitia amet velit, reiciendis
+                    optio minima? Rerum necessitatibus porro saepe ad mollitia quasi nam hic, ea dignissimos ullam
+                    eligendi nesciunt quas laborum rem impedit quos eos voluptatum modi optio voluptate illo, blanditiis
+                    aut nulla laboriosam. Nesciunt dignissimos numquam vitae laboriosam modi! Voluptate molestiae
+                    voluptatibus tenetur amet et eius nam doloribus quam dolorum velit, obcaecati saepe nulla neque
+                    iusto ipsum nemo adipisci pariatur corrupti, modi magnam eum atque laboriosam. Id dolores
+                    repellendus amet, culpa porro nesciunt fuga est ipsam laboriosam quia modi aliquid at? Commodi
+                    inventore magni quam in perferendis dolore deserunt! Placeat, ex impedit. Fugiat dignissimos, qui,
+                    magnam libero assumenda pariatur voluptatem delectus deleniti eos veritatis sequi minima excepturi.
+                    Hic sed itaque debitis impedit magni eum quas ducimus deleniti maxime nostrum, ratione accusamus
+                    nulla quisquam voluptas. Culpa aperiam obcaecati iste nam consequatur velit ipsum aliquid suscipit?
+                    Ipsam voluptates sint cumque amet dolores consequuntur nihil voluptatem perferendis aliquam.
+                    Inventore recusandae consectetur, laudantium tenetur cumque aliquam a delectus reiciendis aperiam
+                    odit! Tempore laboriosam repudiandae vero obcaecati dicta omnis! Sunt quas, officiis beatae
+                    voluptate aliquid eum error qui inventore quisquam alias reiciendis vero praesentium hic. Et vero
+                    rem, iusto tenetur voluptates ad, explicabo enim, consequuntur saepe illo nemo libero neque
+                    necessitatibus nobis alias cum reiciendis rerum tempora! Voluptatibus, iure pariatur. Sit
+                    necessitatibus doloremque sunt ut temporibus repudiandae odio eos animi voluptatum non eum,
+                    laboriosam pariatur suscipit assumenda placeat quod iste facere aut, enim voluptatibus alias.
+                    Necessitatibus, corporis ratione provident incidunt quas quod exercitationem magni distinctio quidem
+                    asperiores labore nulla eveniet dolor minima quisquam, aut delectus expedita a accusamus optio.
+                    Minus doloremque dolorem vel praesentium nihil necessitatibus aperiam, suscipit, est repellat alias
+                    voluptas temporibus saepe obcaecati quas porro cum dignissimos sed voluptatum placeat!
                 </div>
             </div>
             <div class="slide dsm-card">
@@ -204,8 +223,8 @@
                 </div>
             </div>
             <div class="content">
-                <!-- <div class="title">
-                </div> -->
+                <div class="title">
+                </div>
                 <div class="summary">
 
                 </div>
@@ -222,11 +241,11 @@
             if (!summary) return
             const textLength = summary.innerText.length;
 
-            if (textLength > 150) {
+            if (textLength > 125) {
                 let full = document.createElement('div')
                 full.className = 'full'
                 full.innerHTML = summary.innerText
-                summary.innerHTML = summary.innerText.split('').slice(0, 150).join('').trim() +
+                summary.innerHTML = summary.innerText.split('').slice(0, 125).join('').trim() +
                     `... <span class="readMore" onclick="openSidebar(this)">Read More</span>`
                 summary.appendChild(full)
             }
@@ -242,6 +261,7 @@
             }, 100);
             sidebar.querySelector('.name').innerHTML = fullMessage.querySelector('.name').innerHTML
             sidebar.querySelector('.stars').innerHTML = fullMessage.querySelector('.stars').innerHTML
+            sidebar.querySelector('.title').innerHTML = fullMessage.querySelector('.title').innerHTML
             sidebar.querySelector('.summary').innerHTML = fullMessage.querySelector('.full').innerHTML
             sidebar.querySelector('.date').innerHTML = fullMessage.querySelector('.date').innerHTML
         }
